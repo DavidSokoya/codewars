@@ -63,3 +63,60 @@ function defineSuit(card) {
   
   return deck[card.charAt(card.length -1)]
 }
+
+// 4. CSV representation of array
+// Create a function that returns the CSV representation of a two-dimensional numeric array.
+
+// Example:
+
+// input:
+//    [[ 0, 1, 2, 3, 4 ],
+//     [ 10,11,12,13,14 ],
+//     [ 20,21,22,23,24 ],
+//     [ 30,31,32,33,34 ]] 
+    
+// output:
+//      '0,1,2,3,4\n'
+//     +'10,11,12,13,14\n'
+//     +'20,21,22,23,24\n'
+//     +'30,31,32,33,34'
+// Array's length > 2.
+
+// More details here: https://en.wikipedia.org/wiki/Comma-separated_values
+
+// Note: you shouldn't escape the \n, it should work as a new line.
+
+function toCsvText(array) {
+   return array.join('\n');
+}
+
+// 5. An AI has infected a text with a character!!
+
+// This text is now fully mutated to this character.
+
+// If the text or the character are empty, return an empty string.
+// There will never be a case when both are empty as nothing is going on!!
+
+// Note: The character is a string of length 1 or an empty string.
+
+// Example
+// text before = "abc"
+// character   = "z"
+// text after  = "zzz"
+
+function contamination(text, char){
+  let newChar = ""
+  if (text === "" || char === "") {
+    return ""
+  }
+  
+  
+  for (let i = 0; i < text.length; i++) {
+    newChar += char
+  }
+  return newChar;
+}
+
+function contamination(text, char){
+  return char.repeat(text.length)
+}
