@@ -26,3 +26,40 @@ function isLockNessMonster(s) {
 function billboard(name, price = 30) {
   return name.split('').reduce((sum, letter) => sum + price, 0); 
 }
+
+// 3. Define a card suit
+
+// You get any card as an argument. Your task is to return the suit of this card (in lowercase).
+
+// Our deck (is preloaded):
+
+// ('3♣') -> return 'clubs'
+// ('3♦') -> return 'diamonds'
+// ('3♥') -> return 'hearts'
+// ('3♠') -> return 'spades'
+
+function defineSuit(card) {
+  
+  let newCard = card.toLowerCase();
+  
+  if (newCard.slice(-1) === '♣'){
+    return 'clubs'
+  }else if (newCard.slice(-1) === '♦' ){
+    return 'diamonds'
+  }else if (newCard.slice(-1) === '♥' ){
+    return 'hearts'
+  } else if ( newCard.slice(-1) === '♠' ) {
+    return 'spades'
+  }
+}
+
+function defineSuit(card) {
+  const deck = {
+      '♣' : 'clubs',
+      '♦' : 'diamonds',
+      '♥'  : 'hearts',
+      '♠' : 'spades'
+     }
+  
+  return deck[card.charAt(card.length -1)]
+}
