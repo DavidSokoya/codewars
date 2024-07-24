@@ -144,3 +144,10 @@ function whoIsPaying(name){
 function whoIsPaying(name){
   return (name.length>2)?([name, name.substr(0,2)]):[name];
 }
+
+// 7. 8. Alan Partridge II - Apple Turnover
+// Your job is simple, if x squared is more than 1000, return It's hotter than the sun!!, else, return Help yourself to a honeycomb Yorkie for the glovebox.
+
+function apple(x){
+ return x*x > 1000 ? "It's hotter than the sun!!" : "Help yourself to a honeycomb Yorkie for the glovebox."
+}
