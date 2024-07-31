@@ -97,3 +97,87 @@ function isVow(a){
 const vowels = ['a', 'e', 'i', 'o', 'u'];
 return a.map(code => vowels.includes(String.fromCharCode(code)) ? String.fromCharCode(code) : code )
 }
+
+// 6. Arguments to Binary addition
+// Given an array add all the number elements and return the binary equivalent of that sum; to make the code bullet proof anything else than a number should be added as 0 since it can't be added.
+
+// If your language can handle float binaries assume the array won't contain float or doubles.
+
+// arr2bin([1,2]) == '11'
+// arr2bin([1,2,'a']) == '11'
+// arr2bin([]) == '0'
+// NOTE: NaN is a number too in javascript for decimal, binary and n-ary base
+
+
+function arr2bin(arr){
+  return arr.reduce((acc, curr) => acc + (typeof curr === 'number' ? curr : 0), 0).toString(2)
+}
+
+// 7. Find the Difference in Age between Oldest and Youngest Family Members
+
+function differenceInAges(ages){
+  
+  let youngest = Math.min(...ages);
+  let oldest = Math.max(...ages);
+  let difference = oldest -youngest;
+  
+  return [youngest, oldest, difference];
+}
+
+// 8. Sort My Textbooks
+
+// HELP! Jason can't find his textbook! It is two days before the test date, and Jason's textbooks are all out of order! Help him sort a list (ArrayList in java) full of textbooks by subject, so he can study before the test.
+
+// The sorting should NOT be case sensitive
+
+function sorter(textbooks) {
+  return textbooks.sort((a, b) => a.toLowerCase() > b.toLowerCase() ? 1 : 
+                                  a.toLowerCase() < b.toLowerCase() ? -1  : 0)
+}
+
+// 9. Merge two sorted arrays into one
+
+function mergeArrays(arr1, arr2) {
+  return [...arr1, ...arr2].sort((a, b) => {
+    return a - b;
+  }).filter((el, index, arr) => {
+    return arr.indexOf(el) === index;
+  });
+}
+
+// 10. Sum Arrays
+
+// Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
+
+// Examples
+// Input: [1, 5.2, 4, 0, -1]
+// Output: 9.2
+
+// Input: []
+// Output: 0
+
+// Input: [-2.398]
+
+// Sum Numbers
+function sum (numbers) {
+    "use strict";
+   return numbers == [] ? 0 : numbers.reduce((acc, curr) => acc + curr, 0)
+    
+};
+
+// 11. My head is at the wrong end!
+
+// You're at the zoo... all the meerkats look weird. Something has gone terribly wrong - someone has gone and switched their heads and tails around!
+
+// Save the animals by switching them back. You will be given an array which will have three values (tail, body, head). It is your job to re-arrange the array so that the animal is the right way round (head, body, tail).
+
+// Same goes for all the other arrays/lists that you will get in the tests: you have to change the element positions with the same exact logics
+
+// Simples!
+
+
+function fixTheMeerkat(arr) {
+ 
+  return [arr[2], arr[1], arr[0] ];
+  
+}
