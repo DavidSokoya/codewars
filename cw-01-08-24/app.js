@@ -160,3 +160,7 @@ function all( arr, fun ){ {
 }
 
 }
+// 5. mergeArrays
+function mergeArrays(a, b) {
+  return [...a, ...b].sort((a,b) => a - b).filter((a, i, arr) => arr.indexOf(a) === i)
+}
