@@ -115,9 +115,19 @@ const flip=(d, a)=>{
 
 // Complete the function which takes two arguments and returns all numbers which are divisible by the given divisor. First argument is an array of numbers and the second is the divisor.
 
-Example(Input1, Input2 --> Output)
-[1, 2, 3, 4, 5, 6], 2 --> [2, 4, 6]
+// Example(Input1, Input2 --> Output)
+// [1, 2, 3, 4, 5, 6], 2 --> [2, 4, 6]
 
 function divisibleBy(numbers, divisor){
   return numbers.filter(e => e % divisor === 0)
 }
+
+// 3. Basic Training: Add item to an Array
+// Add the value "codewars" to the websites array.
+// After your code executes the websites array should == ["codewars"]
+
+// The websites array has already been defined for you using the following code:
+
+// var websites = [];
+
+websites.push("codewars")
