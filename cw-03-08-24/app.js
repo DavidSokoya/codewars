@@ -30,3 +30,7 @@ function arrayMadness(a, b) {
   return (a.map(e => Math.pow(e, 2)).reduce((a,b)=> a + b,0)) > (b.map(e => Math.pow(e, 3)).reduce((a,b)=> a + b,0)) ? true : false
 }
 
+// Push a hash/an object into array
+// You are trying to put a hash in ruby or an object in javascript or java into an array, but it always returns error, solve it and keep it as simple as possible!
+items = []
+items.push({a: "b", c: "d"})
