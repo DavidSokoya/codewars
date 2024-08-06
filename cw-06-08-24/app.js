@@ -80,3 +80,17 @@ function periodIsLate(last, today, cycleLength) {
   // Check if the number of days passed is greater than the cycle length
   return daysPassed > cycleLength;
 }
+
+// Pythagorean Triple
+function isPythagoreanTriple(integers) {
+  let integerss = integers.sort((a, b) => a -b)
+  let n1 = integerss[0]
+  let n2 = integerss[1]
+  let n3 = integerss[2]
+  
+  if (Math.pow(n1, 2) + Math.pow(n2, 2) === Math.pow(n3, 2)){
+    return true
+  }else {
+    return false
+  }
+}
