@@ -111,28 +111,23 @@ function mergeStrings(first, second){
 
 // Clothes size number converter
 function sizeToNumber(size) {
-  const baseSizes = {
+  let sizes = {
     s: 36,
     m: 38,
-    l: 40,
+    l: 40
   };
-
-  // Check if size is valid
-  const match = size.match(/^([x]+)?(s|m|l)$/);
-  if (!match) {
-    return null; // Invalid size
+  
+  if (size.length > 1 && size[0] === 'x' && size[size.length - 1] === 's') {
+    
+    return sizes.s - size.slice(0, -1).length * 2;
+    
+  } else if (size.length > 1 && size[0] === 'x' && size[size.length - 1] === 'l') {
+    
+    return sizes.l + size.slice(0, -1).length * 2;
+    
+  } else {
+    
+    return sizes[size] || null;
+    
   }
-
-  const modifiers = match[1] || '';
-  const baseSize = match[2];
-
-  // Handle invalid case: modifier for m size
-  if (baseSize === 'm' && modifiers.length > 0) {
-    return null; // Invalid size
-  }
-
-  // Calculate size based on modifiers and base size
-  const sizeDiff = modifiers.length * (baseSize === 's' ? -2 : 2);
-  return baseSizes[baseSize] + sizeDiff;
 }
-
