@@ -58,3 +58,20 @@ function broken(x){
 
 // 'á' is U+00E1, 'é' is U+00E9, 'í' is U+00ED.
 
+function conjugate(verb){
+  
+  const conjugations = {
+      "ar": ["o","as","a","amos","áis","an"],
+      "er": [ "o","es","e","emos","éis","en"],
+      "ir": [ "o","es","e","imos","ís","en"]
+      }
+  
+    const infinitive = verb.slice(-2)
+    const word = verb.slice(0, -2)
+    
+    if (conjugations.hasOwnProperty(infinitive)) {
+      const endings = conjugations[infinitive];
+      const conjugatedForms = endings.map(ending => word + ending);
+      return { [verb]: conjugatedForms };
+    }
+  }
