@@ -16,7 +16,45 @@
 // For example:
 
 // "Jędrzej Błądziński"  -->  "Jedrzej Bladzinski"
+function correctPolishLetters(strings) {
+  const letters = {
+    'ą': 'a',
+    'ć': 'c',
+    'ę': 'e',
+    'ł': 'l',
+    'ń': 'n',
+    'ó': 'o',
+    'ś': 's',
+    'ź': 'z',
+    'ż': 'z'
+  };
+  let newStr = []
 
+  for (let i = 0; i < strings.length; i++){
+    if(strings[i] === 'ą'){
+      newStr.push('a')
+    }else if (strings[i] === 'ć' ){
+      newStr.push('c')
+    }else if (strings[i] === 'ę' ){
+      newStr.push('e')
+    }else if (strings[i] === 'ł' ){
+      newStr.push('l')
+    }else if (strings[i] === 'ń'){
+      newStr.push('l')
+    }else if (strings[i] === 'ó'){
+      newStr.push('o')
+    }else if (strings[i] === 'ś'){
+      newStr.push('s')
+    }else if (strings[i] === 'ź' ){
+      newStr.push('z')
+    }else if (strings[i] === 'ż'){
+      newStr.push('z')
+    }else{
+      newStr.push(strings[i])
+    }
+  }
+return newStr.join('');
+}
 function correctPolishLetters(string) {
   const letters = {
     'ą': 'a',
@@ -29,7 +67,6 @@ function correctPolishLetters(string) {
     'ź': 'z',
     'ż': 'z'
   };
-
   let result = '';
   for (let i = 0; i < string.length; i++) {
     const char = string[i];
@@ -61,28 +98,29 @@ function add(a, b){
 // Javascript => String.fromCharCode(97) // a
 // C# => Tools.FromCharCode(97) // a
 
-let ArrowFunc = function(arr) {
-  return arr.map( e => String.fromCharCode(e)).join(''); //Complete this function
-}
+// let ArrowFunc = function(arr) {
+//   return arr.map( e => String.fromCharCode(e)).join(''); //Complete this function
+// }
 
 // 4. UEFA EURO 2016
 
 // Finish the uefaEuro2016() function so it return string just like in the examples below:
 
-// uefaEuro2016(['Germany', 'Ukraine'],[2, 0]) // "At match Germany - Ukraine, Germany won!"
-// uefaEuro2016(['Belgium', 'Italy'],[0, 2]) // "At match Belgium - Italy, Italy won!"
-// uefaEuro2016(['Portugal', 'Iceland'],[1, 1]) // "At match Portugal - Iceland, teams played draw."
+//uefaEuro2016(['Germany', 'Ukraine'],[2, 0])) // "At match Germany - Ukraine, Germany won!"
+//uefaEuro2016(['Belgium', 'Italy'],[0, 2])) // "At match Belgium - Italy, Italy won!"
+//uefaEuro2016(['Portugal', 'Iceland'],[1, 1])) // "At match Portugal - Iceland, teams played draw."
 
 function uefaEuro2016(teams, scores){
-  
-      if (scores[0] > scores[1]){
-        return `At match ${teams[0]} - ${teams[1]}, ${teams[0]} won!`
-      }else if (scores[0] < scores[1]){
-        return `At match ${teams[0]} - ${teams[1]}, ${teams[1]} won!`
-      }else {
-        return `At match ${teams[0]} - ${teams[1]}, teams played draw.`
-      }
-  
+  let [scoreA, scoreB] = [scores]
+  let [teamA,teamB] = [teams]
+  // check the winner and draw
+  if (scoreA > scoreB){
+    return `"At match ${teamA} - ${teamB}, ${teamA} won!"`
+  }else if (scoreB > scoreA){
+    return `"At match ${teamA} - ${teamB}, ${teamB} won!"`
+  }else {
+    return `"At match ${teamA} - ${teamB}, teams played draw"`
+  }
 }
 
 // 5. Is there a vowel in there?
@@ -90,8 +128,31 @@ function uefaEuro2016(teams, scores){
 // Given an array of numbers, check if any of the numbers are the character codes for lower case vowels (a, e, i, o, u).
 
 // If they are, change the array value to a string of that vowel.
-
+[5,97, 54]
 // Return the resulting array.
+function isVow(a){
+  // check arr
+  let arr =[]
+  for(let i = 0; i < a.length; i++){
+    if (a[i] === fromCharCode(a)){
+      arr.push('a')
+    }else if (a[i] === fromCharCode(e)){
+      arr.push('e')
+    }else if (a[i] === fromCharCode(a)){
+      arr.push('i')
+    }else if (a[i] === fromCharCode(o)){
+      arr.push('o')
+    }else if (a[i] === fromCharCode(u)){
+      arr.push('u')
+    }else{
+      arr.push(i)
+    }
+    return arr
+  }
+}
+
+
+a.map(number => vowels.includes(String.fromCharCode(number)) ? String.fromCharCode(number) : number)
 
 function isVow(a){
 const vowels = ['a', 'e', 'i', 'o', 'u'];
@@ -107,6 +168,19 @@ return a.map(code => vowels.includes(String.fromCharCode(code)) ? String.fromCha
 // arr2bin([1,2,'a']) == '11'
 // arr2bin([]) == '0'
 // NOTE: NaN is a number too in javascript for decimal, binary and n-ary base
+function arr2bin(arr){
+  // add all the numbers in array
+  let num = 0;
+  for (let i = 0; i < arr.length; i++){
+    if( typeof arr[i] === 'number') {
+      num += arr[i]
+    }
+    
+  }
+  // convert to binary
+  return num.toString(2)
+}
+
 
 
 function arr2bin(arr){
