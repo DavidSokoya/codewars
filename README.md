@@ -1,1 +1,2 @@
-# Developing critical thinking and coding prowess with daily challenges
+# Developing critical thinking and coding prowess with daily challenges 
+## JavaScript | Rust | Python
