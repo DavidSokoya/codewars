@@ -8,3 +8,7 @@ function nameShuffler(str){
   const [firstName, lastName] = str.split(' ')
   return lastName + ' ' + firstName
 }
+
+function nameSuffle(str){
+  return str.split(' ').reverse().join(' ')
+}
