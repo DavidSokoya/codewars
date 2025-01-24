@@ -18,3 +18,7 @@
 // More details here: https://en.wikipedia.org/wiki/Comma-separated_values
 
 // Note: you shouldn't escape the \n, it should work as a new line.
+function toCsvText(array) {
+   
+  return array.join('\n')
+}
