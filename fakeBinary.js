@@ -2,3 +2,14 @@
 
 // Note: input will never be an empty string
 
+function fakeBin(x){
+  let res = ''
+  for(let i = 0; i < x.length; i++){
+    if(x[i] > 4) {
+      res += '1'
+    }else {
+      res += '0'
+    }
+  }
+  return res
+}
