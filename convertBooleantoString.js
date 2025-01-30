@@ -3,5 +3,5 @@
 
 // Note: Only valid inputs will be given.
 function booleanToString(b){
-  retorn b.toString()
+  return b.toString()
 }
