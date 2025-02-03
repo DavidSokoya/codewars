@@ -9,5 +9,7 @@
 // C# => Tools.FromCharCode(97) // a
 
 let ArrowFunc = function(arr) {
+
   return  arr.map((num) => String.fromCharCode(num)).join('')
+  
 }
